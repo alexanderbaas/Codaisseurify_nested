@@ -16,9 +16,9 @@ before_action :find_artist, only: [:create]
     end
 
    def destroy
-     @artist = Artist.find(params[:artist_id])
-     @song = @artist.songs.find(params[:id])
-      @song.destroy
+    @artist = Artist.find(params[:artist_id])
+    @song = @artist.songs.find(params[:id])
+    @song.destroy
       redirect_to artists_path(@artist)
     end
 
