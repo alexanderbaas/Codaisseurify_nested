@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,30 +9,24 @@
 <body>
   <h1>Codaisseurify</h1>
 
-<div class="row">
+    <div class="row">
 
-    <div class="">
-      <% @artists.each do |artist| %>
-          <div class="col-sm-4 col-md-4 col-lg-4">
-                <div class="thumbnail centerBlock">
-                    <a href="#"><%= image_tag artist.remote_image_url %></a>
-                </div>
+        <div class="">
+          <% @artists.each do |artist| %>
+              <div class="col-sm-4 col-md-4 col-lg-4">
+                    <div class="thumbnail centerBlock">
+                        <a href="#"><%= image_tag artist.remote_image_url %></a>
+                    </div>
 
-                  <div class="centerBlock">
-                    <%= link_to artist.name, artist_path(artist.id) %> <br>
-                  </div>
-                  <div class="caption centerBlock">
-                    <%= link_to "delete", artist_path(artist.id), method: :delete, data: { confirm: "Are you sure?" } %>
-                  </div>
-          </div>
-      <% end %>
+                      <div class="centerBlock">
+                        <%= link_to artist.name, artist_path(artist.id) %> <br>
+                      </div>
+                      <div class="caption centerBlock">
+                        <%= link_to "delete", artist_path(artist.id), method: :delete, data: { confirm: "Are you sure?" } %>
+                      </div>
+              </div>
+          <% end %>
+        </div>
     </div>
-</div>
-
-
-
-
-
-
 </body>
 </html>

@@ -8,7 +8,11 @@ before_action :find_artist, only: [:show, :destroy]
     def show
     end
 
-
+    def destroy
+          @artist = Artist.find(params[:id])
+          @artist.destroy
+          redirect_to artists_path
+    end
 
     private
 

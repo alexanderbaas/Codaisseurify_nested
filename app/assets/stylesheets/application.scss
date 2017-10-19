@@ -15,3 +15,47 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+  opacity: 0.2;
+}
+
+.caption {
+  opacity: 0.3;
+}
+.caption:hover {
+  opacity: 1;
+}
+
+
+ .thumb {
+   size: 100px;
+   radius: 100px;
+   width: 100px;
+
+ }
+ .thumbnail {
+
+   width: 200px;
+   radius: 50px;
+ }
+
+.midscreen {
+  text-align: center;
+  color: silver;
+  opacity: 0.1;
+  padding-bottom: 40px;
+  padding-top: 40px;
+}
+.midscreen {
+  opacity: 1;
+}
+
+.centerBlock {
+  display: table;
+  margin: auto;
+}
