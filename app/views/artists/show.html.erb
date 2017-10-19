@@ -25,7 +25,7 @@
                <%= song.title %>
 
     <div class="caption centerBlock">
-          <%= link_to "Delete", artist_song_path(song.id), method: :delete, data: { confirm: "Are you sure?" } %>
+          <%= link_to "Delete", [song.artist, song], method: :delete, data: { confirm: "Are you sure?" } %>
     </div>
 
     <br>

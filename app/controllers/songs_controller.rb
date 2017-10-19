@@ -19,7 +19,7 @@ before_action :find_artist, only: [:create]
     @artist = Artist.find(params[:artist_id])
     @song = @artist.songs.find(params[:id])
     @song.destroy
-      redirect_to artists_path(@artist)
+      redirect_to artist_path(@artist)
     end
 
   private
