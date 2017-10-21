@@ -15,7 +15,7 @@
           <% @artists.each do |artist| %>
               <div class="col-sm-4 col-md-4 col-lg-4">
                       <div class="thumbnail centerBlock">
-                          <a href=""><%= image_tag artist.remote_image_url%></a>
+                          <%= image_tag artist.remote_image_url%>
                       </div>
 
                       <div class="centerBlock">

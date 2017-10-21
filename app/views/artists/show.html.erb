@@ -15,7 +15,7 @@
 
 
     <div class="thumbnail centerBlock">
-        <a href="#"><%= image_tag @artist.remote_image_url %></a>
+        <%= image_tag @artist.remote_image_url %>
     </div>
 
 
@@ -32,9 +32,13 @@
      <% end %>
     </div>
 
-    <div class="centerBlock" id="song_title">
-            <%= link_to "New Song" , new_artist_song_path(@artist) %>
-    </div>
+        <%= form_for [@artist, @artist.songs.new] do |f| %>
+          <div class="form-group centerBlock">
+            <%= f.label :title %>
+            <%= f.text_field :title, id:"new-song" %>
+            <%= f.submit "New Song" %>
+          </div>
+        <% end %>
 
 
 </body>
