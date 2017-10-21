@@ -22,7 +22,7 @@
                         <%= link_to artist.name, artist_path(artist.id) %> <br>
                       </div>
                       <div class="caption centerBlock">
-                        <%= link_to "delete", artist_path(artist.id), method: :delete, data: { confirm: "Are you sure?" } %>
+                        <%= link_to "Delete", artist_path(artist.id), method: :delete, data: { confirm: "Are you sure?" } %>
                       </div>
               </div>
           <% end %>

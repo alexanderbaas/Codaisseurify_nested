@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Codaisseurify</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
 </head>
 <body>
     <div class="centerBlock">
@@ -18,27 +20,28 @@
         <%= image_tag @artist.remote_image_url %>
     </div>
 
+<br>
+  <div class="centerBlock">
+      <ul id="songlist">
+          <% @artist.songs.each do |song| %>
+          <li class="song">
+                    <label><%= song.title %></label>
+              <div class="caption centerBlock">
+                    <%= link_to "Delete", [song.artist, song], method: :delete, data: { confirm: "Are you sure?" } %>
+              </div>
+          </li>
+<br>
+         <% end %>
+      </ul>
+  </div>
 
-    <br>
-    <div class="centerBlock">
-      <% @artist.songs.each do |song| %>
-               <%= song.title %>
-
-    <div class="caption centerBlock">
-          <%= link_to "Delete", [song.artist, song], method: :delete, data: { confirm: "Are you sure?" } %>
-    </div>
-
-    <br>
-     <% end %>
-    </div>
-
-        <%= form_for [@artist, @artist.songs.new] do |f| %>
-          <div class="form-group centerBlock">
-            <%= f.label :title %>
-            <%= f.text_field :title, id:"new-song" %>
-            <%= f.submit "New Song" %>
-          </div>
-        <% end %>
+            <%= form_for [@artist, @artist.songs.new] do |f| %>
+              <div class="form-group centerBlock">
+                <%= f.label :title %>
+                <%= f.text_field :title, id:"new-song" %>
+                <%= f.submit "New Song" %>
+              </div>
+            <% end %>
 
 
 </body>
