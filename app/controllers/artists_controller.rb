@@ -1,6 +1,8 @@
 class ArtistsController < ApplicationController
 before_action :find_artist, only: [:show, :destroy]
 
+    # GET /artists
+    # GET /artists.json
     def index
      @artists = Artist.all
     end
